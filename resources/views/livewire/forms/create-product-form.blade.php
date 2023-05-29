@@ -2,7 +2,7 @@
 
 
 
-   
+    <div class="bg-blue-100 p-10"> lHellw  </div>
     
      <form wire:submit.prevent="create">
         <div class="space-y-12">
