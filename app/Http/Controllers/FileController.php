@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\File;
+use App\Models\Product;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use App\Models\Product;
+use Illuminate\Support\Facades\Storage;
 
 class FileController extends Controller
 {
@@ -29,4 +31,11 @@ class FileController extends Controller
         
   
       }
+
+      static function deleteFile(File $file) {
+          $folder = $file->file_folder;
+          if(Storage::disk('public')->exists($folder)){
+              Storage::disk('public')->deleteDirectory($folder);
+          }
+    }
 }

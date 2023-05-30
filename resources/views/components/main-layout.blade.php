@@ -67,11 +67,11 @@
 
 
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                Livewire.on('showSuccess', postId => {
-                    alert('A post was added with the id of: ' + postId);
-                });
-            });
+            // document.addEventListener('DOMContentLoaded', function() {
+            //     Livewire.on('showSuccess', postId => {
+            //         alert('A post was added with the id of: ' + postId);
+            //     });
+            // });
         </script>
 
         @stack('modals')
