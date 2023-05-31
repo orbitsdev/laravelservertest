@@ -16,17 +16,18 @@ class AuthApiController extends Controller
     public function register(CreateUserRequest $request)
     {
         
+        
+        return response()->json([$request->all()]);
+    // $validatedData = $request->validated();
+    // $password = $validatedData['password'];
 
-    $validatedData = $request->validated();
-    $password = $validatedData['password'];
+    // unset($validatedData['password']);
 
-    unset($validatedData['password']);
-
-    $user = new User($validatedData);
-    $user->password = Hash::make($password);
-    $user->save();
+    // $user = new User($validatedData);
+    // $user->password = Hash::make($password);
+    // $user->save();
     
-    return new UserResource($user);
+    //  return new UserResource($user);
     
 
     }
@@ -58,7 +59,7 @@ class AuthApiController extends Controller
             if ($token) {
                 $token->delete();
             }
-            // $request->user()->tokens()->delete();
+            // $request->       user()->tokens()->delete();
             // $token = PersonalAccessToken::findToken($accessToken);
             // $token->delete();
             // // $request->user()->tokens()->delete();
@@ -69,10 +70,9 @@ class AuthApiController extends Controller
         // return new UserResource(['success']);
     }
 
+   
 
 
-    
-    
 
 
 }
