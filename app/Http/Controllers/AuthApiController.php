@@ -30,7 +30,7 @@ class AuthApiController extends Controller
 
     // return  response(['data'=> $user]);
     
-     return new UserResource($user);
+     return new UserResource([$user]);
     
 
     }
