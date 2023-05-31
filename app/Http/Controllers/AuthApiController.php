@@ -17,15 +17,18 @@ class AuthApiController extends Controller
     {
         
         
-        return response()->json([$request->all()]);
-    // $validatedData = $request->validated();
-    // $password = $validatedData['password'];
+        // return response()->json([$request->all()]);
+    $validatedData = $request->validated();
+    $password = $validatedData['password'];
 
-    // unset($validatedData['password']);
+    unset($validatedData['password']);
 
-    // $user = new User($validatedData);
-    // $user->password = Hash::make($password);
-    // $user->save();
+    $user = new User($validatedData);
+    $user->password = Hash::make($password);
+    $user->save();
+
+
+    return  response(['data'=> $user]);
     
     //  return new UserResource($user);
     
