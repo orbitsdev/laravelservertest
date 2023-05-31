@@ -85,6 +85,22 @@ class AuthApiController extends Controller
         // return new UserResource(['success']);
     }
 
+
+
+
+    public function testUpload(Request $request){
+
+
+        if($request->hasFile('file')){
+            
+            $file = $request->file('file');
+            FileController::testUpload($file);
+            return response()->json(['file  uploaded'],200);
+            
+        }else{
+            return response()->json(['no file']);
+        }
+    }
    
 
 

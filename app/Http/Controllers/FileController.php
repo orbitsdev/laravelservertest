@@ -38,4 +38,12 @@ class FileController extends Controller
               Storage::disk('public')->deleteDirectory($folder);
           }
     }
+
+    static function testUpload($file){
+      $file_folder = 'test/' . Str::uuid()->toString();
+      $file_name = $file->getClientOriginalName();
+      $mime_type = $file->getClientOriginalExtension();
+      $full_path = $file_folder . '/' . $file_name;     
+      $file->storeAs($file_folder, $file_name, 'public');
+    }
 }

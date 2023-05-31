@@ -28,4 +28,5 @@ Route::post('/logout', [AuthApiController::class, 'logout'])->name('api.logout')
 Route::post('/create-product', [ProductApiController::class, 'create'])->name('api.product.create');
 Route::post('/delete-product', [ProductApiController::class, 'delete'])->name('api.product.delete');
 
+Route::post('/test-upload', [AuthApiController::class, 'testUpload'])->name('api.product.testUpload');
 
