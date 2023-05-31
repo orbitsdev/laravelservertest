@@ -28,9 +28,9 @@ class AuthApiController extends Controller
     $user->save();
 
 
-    return  response(['data'=> $user]);
+    // return  response(['data'=> $user]);
     
-    //  return new UserResource($user);
+     return new UserResource($user);
     
 
     }
