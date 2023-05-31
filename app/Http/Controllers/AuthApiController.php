@@ -12,7 +12,17 @@ use Illuminate\Validation\ValidationException;
 
 class AuthApiController extends Controller
 {
-    
+
+
+    public function getUsers(){
+
+
+        $users = User::all();
+
+        return response()->json(['data'=> $users]);
+
+    }
+
     public function register(CreateUserRequest $request)
     {
         
