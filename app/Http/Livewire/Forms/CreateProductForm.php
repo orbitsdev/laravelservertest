@@ -100,7 +100,7 @@ class CreateProductForm extends Component
   public function showFormToUpdate(Product $product){
     
     
-    $this->selectedData = $product->id;
+  $this->selectedData = $product->id;
    $this->isCreateModalShow = true;
    $this->product_name = $product->product_name ;
    $this->product_price = $product->product_price;
