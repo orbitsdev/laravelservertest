@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 class PostApiController extends Controller
 {
     public function fetchPost($limit, $offset){
-        $data = Post::orderBy('id', 'desc')
+        $data = Post::orderBy('id', 'asc')
         ->skip($offset)
         ->take($limit)
         ->get();
