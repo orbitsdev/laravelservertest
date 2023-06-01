@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\PostApiController;
 use App\Http\Controllers\Api\ProductApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -27,4 +28,5 @@ Route::post('/logout', [AuthApiController::class, 'logout'])->name('api.logout')
 Route::post('/create-product', [ProductApiController::class, 'create'])->name('api.product.create');
 Route::post('/delete-product', [ProductApiController::class, 'delete'])->name('api.product.delete');
 Route::post('/test-upload', [AuthApiController::class, 'testUpload'])->name('api.product.testUpload');
+Route::get('/post/{limit}/{offset}', [PostApiController::class, 'fetchPost'])->name('api.post.fetchPost');
 
