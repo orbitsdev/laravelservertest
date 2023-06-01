@@ -21,12 +21,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/users', [AuthApiController::class , 'getUsers'])->name('api.getUsers');
-
 Route::post('/login', [AuthApiController::class, 'login'])->name('api.login');
 Route::post('/register', [AuthApiController::class, 'register'])->name('api.register');
-Route::post('/logout', [AuthApiController::class, 'logout'])->name('api.logout');
+Route::post('/logout', [AuthApiController::class, 'logout'])->name('api.logout')->middleware(['auth:sanctum']);
 Route::post('/create-product', [ProductApiController::class, 'create'])->name('api.product.create');
 Route::post('/delete-product', [ProductApiController::class, 'delete'])->name('api.product.delete');
-
 Route::post('/test-upload', [AuthApiController::class, 'testUpload'])->name('api.product.testUpload');
 
